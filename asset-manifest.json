@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/crudBasicoReact/static/css/main.1cafa257.css",
-    "main.js": "/crudBasicoReact/static/js/main.5032d892.js",
+    "main.js": "/crudBasicoReact/static/js/main.79def147.js",
     "index.html": "/crudBasicoReact/index.html",
     "main.1cafa257.css.map": "/crudBasicoReact/static/css/main.1cafa257.css.map",
-    "main.5032d892.js.map": "/crudBasicoReact/static/js/main.5032d892.js.map"
+    "main.79def147.js.map": "/crudBasicoReact/static/js/main.79def147.js.map"
   },
   "entrypoints": [
     "static/css/main.1cafa257.css",
-    "static/js/main.5032d892.js"
+    "static/js/main.79def147.js"
   ]
 }
