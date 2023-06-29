@@ -6,15 +6,24 @@ const Listado = () => {
   const [listaNombre, setListaNombre] = useState([]);
   const [modoEdicion, setModoEdicion] = useState(false)
   const [id, setId] = useState('')
+  const [error, setError] = useState(null)
+
+
 
   const añadirNombre = (e)=>{
     e.preventDefault()
+    if(!nombre.trim()){
+      setError('El campo nombre esta vacio')
+      return
+    }
+
     const nuevoNombre = {
       id: uniqid(),
       tituloNombre: nombre
     }
     setListaNombre([...listaNombre, nuevoNombre])
     setNombre('')
+    setError(null)
   }
 
   const deleteNombre = (id)=>{
@@ -32,6 +41,8 @@ const Listado = () => {
     e.preventDefault()
     const nuevoArray = listaNombre.map(item => item.id===id ? {id:id, tituloNombre: nombre} : item)
     setListaNombre(nuevoArray)
+    setModoEdicion(false)
+    setNombre('')
   }
 
 
@@ -82,11 +93,18 @@ const Listado = () => {
             value={nombre}
           />
           <input
-            className="btn btn-info btn-block"
+            className="btn btn-info btn-block mb-3"
             type="submit"
             value={modoEdicion ? "Editar Contacto" : "Añadir Nuevo Nombre"}
           />
         </form>
+        {
+          error != null ? (
+            <div className="alert alert-danger">{error}</div>
+          ):(
+            <div></div>
+          )
+        }
       </section>
     </main>
   );
